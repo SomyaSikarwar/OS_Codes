@@ -4,30 +4,6 @@ ab="addr.txt"
 
 touch "$ab"
 
-Create(){
-    echo "Enter file name"
-    read ab
-    touch $ab
-
-}
-
-Insert(){
-    echo "Enter file name"
-    read ab 
-    
-    res='ls | grep $ab |wc -w'
-    
-    if [ $res -gt 0 ]
-    then
-    echo "File does not exist"
-    else
-    touch $ab
-    fi
-    
-}
-
-
-
 while [ true ]
 do 
 echo "MENUE"
