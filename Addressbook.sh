@@ -41,29 +41,27 @@ case $choice in
 	echo "Enter the name of the person for deleting the record : "
 	read personName
 	
-    sed -i "/$personName/d" "$ab"
+   	 sed -i "/$personName/d" "$ab"
 		
-		echo "successfully deleted!"
-		cat "$ab"
-		;;
+	echo "successfully deleted!"
+	cat "$ab"
+	;;
+ 5)
+	echo "Enter the name of the person whose record is to be modified : "
+	read personName
+ 	echo "Enter the new address : "
+	read newAddr
 		
-		5)
-		echo "Enter the name of the person whose record is to be modified : "
-		read personName
+	sed -i "/$personName/c\ $newAddr" "$ab"
+	;;
 		
-		echo "Enter the new address : "
-		read newAddr
+6)
+	break
+	;;
 		
-		sed -i "/$personName/c\ $newAddr" "$ab"
-		;;
-		
-		6)
-		break
-		;;
-		
-		*)
-		echo "Invalid input"
-		;;
+	*)
+	echo "Invalid input"
+	;;
 
 esac
 
