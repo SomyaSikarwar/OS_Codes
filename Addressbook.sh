@@ -1,6 +1,6 @@
 #!/bin/sh
 
-ab="addr.txt"
+ab="book.txt"
 
 touch "$ab"
 
