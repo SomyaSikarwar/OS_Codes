@@ -1,8 +1,10 @@
 #!/bin/sh
 
-ab="book.txt"
+ab="addr.txt"
 
 touch "$ab"
+
+
 
 while [ true ]
 do 
@@ -41,27 +43,29 @@ case $choice in
 	echo "Enter the name of the person for deleting the record : "
 	read personName
 	
-   	 sed -i "/$personName/d" "$ab"
+    sed -i "/$personName/d" "$ab"
 		
-	echo "successfully deleted!"
-	cat "$ab"
-	;;
- 5)
-	echo "Enter the name of the person whose record is to be modified : "
-	read personName
- 	echo "Enter the new address : "
-	read newAddr
+		echo "successfully deleted!"
+		cat "$ab"
+		;;
 		
-	sed -i "/$personName/c\ $newAddr" "$ab"
-	;;
+		5)
+		echo "Enter the name of the person whose record is to be modified : "
+		read personName
 		
-6)
-	break
-	;;
+		echo "Enter the new address : "
+		read newAddr
 		
-	*)
-	echo "Invalid input"
-	;;
+		sed -i "/$personName/c\ $newAddr" "$ab"
+		;;
+		
+		6)
+		break
+		;;
+		
+		*)
+		echo "Invalid input"
+		;;
 
 esac
 
