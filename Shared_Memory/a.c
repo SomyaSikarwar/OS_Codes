@@ -9,6 +9,6 @@ int main(){
     char *str = (char*) shmat(shmid , (void*)0,0);
     printf(str);
     shmdt(str);
-    shmct(shmid,IPC_RMID,NULL);
+    shmctl(shmid,IPC_RMID,NULL);
     return 0;
 }
